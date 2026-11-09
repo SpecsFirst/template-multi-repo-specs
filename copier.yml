@@ -1,0 +1,30 @@
+# Copier configuration. Not copied into projects (see _exclude).
+# Files keep their real names (no .jinja suffix) so main.md stays readable on the gallery.
+_templates_suffix: ""
+
+_exclude:
+  # Copier defaults
+  - copier.yml
+  - copier.yaml
+  - "~*"
+  - "*.py[co]"
+  - __pycache__
+  - .git
+  - .DS_Store
+  - .svn
+  # Template-only files (anchored: subrepos/*/tasks/README.md must be copied)
+  - /LICENSE
+  - /README.md
+
+project_title:
+  type: str
+  help: Title of the project
+
+first_subrepo:
+  type: str
+  help: Name of the first sub-repo (lowercase letters, digits and hyphens)
+  validator: >-
+    {% if not (first_subrepo | regex_search('^[a-z0-9][a-z0-9-]*$')) %}
+    Use only lowercase letters, digits and hyphens, starting with a letter or a digit
+    (for example: api, web-client).
+    {% endif %}

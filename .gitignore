@@ -1,0 +1,21 @@
+# Ignore anything tied to the momentary execution of a task that is not needed
+# to track the project's progress. Everything versioned here contributes to the
+# durable picture of the project (main specs + task boards).
+
+# Task specs are versioned; only transient exchange is ignored: working files
+# passed between orchestrator and coders (logs, scratch, intermediate outputs).
+# Any .exchange/ anywhere, including subrepos/*/tasks/.exchange/.
+.exchange/
+tasks/.exchange/
+
+# Logs
+logs/
+*.log
+
+# Local transient agent state
+.state/
+.tmp/
+*.swp
+
+# OS / editor
+.DS_Store
