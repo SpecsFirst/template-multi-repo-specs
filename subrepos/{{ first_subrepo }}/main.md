@@ -1,6 +1,6 @@
 ---
 subrepo: {{ first_subrepo }}
-parent: {{ project_title }}     # points to the global spec (../../main.md)
+parent: {{ project_title | tojson }}     # points to the global spec (../../main.md)
 status: draft            # draft | active | completed | archived
 version: 0.1.0
 owner: <owner>

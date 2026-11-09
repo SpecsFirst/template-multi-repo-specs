@@ -1,5 +1,5 @@
 ---
-project: {{ project_title }}
+project: {{ project_title | tojson }}
 status: draft            # draft | active | completed | archived
 version: 0.1.0
 owner: <owner>
